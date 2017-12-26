@@ -3,6 +3,9 @@
 # turn mouse sensitivity all the way up
 # enable tap to click
 # remap caps lock to control
+# remove everything from the dock
+# automatically hide and show the dock
+# enable dragging, without drag lock in: System Preferences => Accessibility => Trackpad Options
 
 # install chrome
 # install iterm
