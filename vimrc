@@ -16,6 +16,16 @@ Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
+" I never want :W or :Q and it's too easy to keep holding shift
+command! W w
+command! Q q
+
+" make vim and system keyboard one and the same
+set clipboard=unnamed
+
+" show line numbers
+set number
+
 " personal preferences
 colorscheme gruvbox
 set background=dark
