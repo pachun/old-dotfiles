@@ -30,5 +30,11 @@ echo "using zsh instead of bash..."
 # echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
+# use the purer prompt
+npm install --global purer-prompt
+
 echo "sym linking dotfiles..."
 rcup -x Brewfile -x install.sh -v -d .
+
+# reload zshrc to load purer
+source ~/.zshrc

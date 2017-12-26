@@ -8,5 +8,9 @@ brew 'zsh'
 # neovim is asynchronous and more actively maintained than vim
 brew 'neovim'
 
+# i need these
+brew 'node'
+
+# i like these
 brew 'wget'
 brew 'tmux'
