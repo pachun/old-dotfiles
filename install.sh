@@ -9,7 +9,7 @@
 # install spectacle
 # install gitx # https://rowanj.github.io/gitx/ - Enable Terminal Usage
 
-# set iterm font: 14 pt fira mono: https://fonts.google.com/specimen/Fira+Mono
+# set iterm font: 16 pt Fantasque Sans Mono: https://github.com/belluzj/fantasque-sans
 # install gruvbox solarized themes: https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2
 
 # install homebrew:
