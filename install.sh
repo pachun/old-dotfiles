@@ -1,4 +1,4 @@
-#!/bin/sh
+# !/bin/sh
 
 # turn mouse sensitivity all the way up
 # enable tap to click
