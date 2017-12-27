@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-rails'
 call plug#end()
 
 " I never want :W or :Q and it's too easy to keep holding shift
@@ -26,10 +27,6 @@ set clipboard=unnamed
 
 " show line numbers
 set number
-
-" prevents phantom-character issue when resizing tmux panes
-set nolazyredraw
-redraw!
 
 " personal preferences
 colorscheme gruvbox

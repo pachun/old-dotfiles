@@ -12,5 +12,6 @@ brew 'neovim'
 brew 'node'
 
 # i like these
+brew 'the_silver_searcher'
 brew 'wget'
 brew 'tmux'
