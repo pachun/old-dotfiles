@@ -15,7 +15,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'janko-m/vim-test'
 Plug 'tpope/vim-rails'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 " I never want :W or :Q and it's too easy to keep holding shift
@@ -26,7 +29,7 @@ command! Q q
 set clipboard=unnamed
 
 " show line numbers
-set number
+set number relativenumber
 
 " personal preferences
 colorscheme gruvbox

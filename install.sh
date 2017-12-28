@@ -10,7 +10,12 @@
 # install chrome
 # install iterm
 # install spectacle
-# install gitx # https://rowanj.github.io/gitx/ - Enable Terminal Usage
+# install gitx: https://rowanj.github.io/gitx/ - Enable Terminal Usage
+# install postgress.app: https://postgresapp.com/
+# then run: gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/latest/bin/pg_config
+
+# install newton
+# brew cask install spotify
 
 # set iterm font: 16 pt Fantasque Sans Mono: https://github.com/belluzj/fantasque-sans
 # install gruvbox solarized themes: https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2
@@ -35,6 +40,10 @@ chsh -s /usr/local/bin/zsh
 
 # use the purer prompt
 npm install --global purer-prompt
+
+# use asdf version manager
+echo "cloning asdf extendable version manager..."
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
 
 echo "sym linking dotfiles..."
 rcup -x Brewfile -x install.sh -v -d .
