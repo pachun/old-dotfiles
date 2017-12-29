@@ -1,11 +1,17 @@
 alias vim='nvim'
 
+alias ..="cd .."
+
+alias c="clear"
+alias e="exit"
+alias t="tmux"
+
 alias b="bundle"
 alias be="bundle exec"
 
 alias s="rspec"
 
-# use purer zsh prompt for git status, branch, dir, etc: 
+# use purer zsh prompt for git status, branch, dir, etc:
 # https://github.com/dfurnes/purer
 PURE_PROMPT_SYMBOL="λ"
 PURE_CMD_MAX_EXEC_TIME=9999999999999
