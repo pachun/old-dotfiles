@@ -12,6 +12,12 @@ PURE_CMD_MAX_EXEC_TIME=9999999999999
 autoload -U promptinit; promptinit
 prompt purer
 
+# use vi mode instead of emacs on the command line
+bindkey -v
+
+# remap escape to jj
+bindkey -M viins 'jj' vi-cmd-mode
+
 # asdf configuration: https://github.com/asdf-vm/asdf/blob/master/README.md
 autoload -Uz compinit
 compinit
