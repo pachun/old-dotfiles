@@ -1,6 +1,9 @@
-" use true color for gruvbox: 
+" use true color for gruvbox:
 "   https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 set termguicolors
+
+" Leader
+let mapleader = " "
 
 " install vim-plug:
 "   https://github.com/junegunn/vim-plug
@@ -19,7 +22,23 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir'
+Plug 'jgdavey/tslime.vim'
 call plug#end()
+
+" vim-test mappings
+nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
+
+" run tests in another tmux pane with tslime
+let test#strategy = "tslime"
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+map <leader>tv <Plug>SetTmuxVars
+" Run the current file in another tmux pane
+nnoremap <leader>r :call Send_to_Tmux("./" . @% . "\n")<CR>
 
 " I never want :W or :Q and it's too easy to keep holding shift
 command! W w
@@ -30,6 +49,18 @@ set clipboard=unnamed
 
 " show line numbers
 set number relativenumber
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set expandtab
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Don't ask me if I want to load changed files. The answer is always 'Yes'
+set autoread
 
 " personal preferences
 colorscheme gruvbox
