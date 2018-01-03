@@ -8,6 +8,9 @@ brew 'zsh'
 # neovim is asynchronous and more actively maintained than vim
 brew 'neovim'
 
+# create pull requests on github from the command line
+brew 'hub'
+
 # i need these
 brew 'node'
 

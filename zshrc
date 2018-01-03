@@ -12,6 +12,7 @@ alias migrate="rails db:migrate db:test:prepare"
 
 alias s="rspec"
 
+alias g="hub"
 alias gco="git checkout"
 alias gb="git branch"
 alias gr="git rebase"
