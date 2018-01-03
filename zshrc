@@ -12,11 +12,17 @@ alias migrate="rails db:migrate db:test:prepare"
 
 alias s="rspec"
 
+branch = _git_branch_name() {
+  git branch 2>/dev/null | awk '/^\*/ { print $2 }'
+}
+alias gp="git push --set-upstream origin ${branch}"
+
 alias g="hub"
-alias gco="git checkout"
-alias gb="git branch"
-alias gr="git rebase"
-alias sq="git rebase -i HEAD~"
+alias pr="g pull-request"
+alias gco="g checkout"
+alias gb="g branch"
+alias gr="g rebase"
+alias sq="g rebase -i HEAD~"
 
 # use purer zsh prompt for git status, branch, dir, etc:
 # https://github.com/dfurnes/purer
