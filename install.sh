@@ -17,6 +17,8 @@
 # install newton
 # brew cask install spotify
 
+# use thing strokes for anti-aliased text: always
+# uncheck: "Draw bold text in bold font"
 # set iterm font: 16 pt Fantasque Sans Mono: https://github.com/belluzj/fantasque-sans
 # install gruvbox solarized themes: https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2
 

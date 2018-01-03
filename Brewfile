@@ -15,6 +15,7 @@ brew 'node'
 brew 'the_silver_searcher'
 brew 'wget'
 brew 'tmux'
+brew 'heroku'
 
 # asdf deps: https://github.com/asdf-vm/asdf/blob/master/README.md
 brew 'coreutils'

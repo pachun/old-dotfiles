@@ -8,6 +8,7 @@ alias t="tmux"
 
 alias b="bundle"
 alias be="bundle exec"
+alias migrate="rails db:migrate db:test:prepare"
 
 alias s="rspec"
 
