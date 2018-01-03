@@ -12,6 +12,11 @@ alias migrate="rails db:migrate db:test:prepare"
 
 alias s="rspec"
 
+alias gco="git checkout"
+alias gb="git branch"
+alias gr="git rebase"
+alias sq="git rebase -i HEAD~"
+
 # use purer zsh prompt for git status, branch, dir, etc:
 # https://github.com/dfurnes/purer
 PURE_PROMPT_SYMBOL="λ"
