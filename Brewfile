@@ -12,7 +12,7 @@ brew 'neovim'
 brew 'hub'
 
 # i need these
-brew 'node'
+brew 'yarn'
 
 # i like these
 brew 'the_silver_searcher'

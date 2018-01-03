@@ -43,6 +43,10 @@ chsh -s /usr/local/bin/zsh
 # use the purer prompt
 npm install --global purer-prompt
 
+# setup path for postgres.app: https://postgresapp.com/documentation/cli-tools.html
+sudo mkdir -p /etc/paths.d &&
+echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+
 # use asdf version manager
 echo "cloning asdf extendable version manager..."
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1

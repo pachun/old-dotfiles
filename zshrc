@@ -24,6 +24,8 @@ alias gb="g branch"
 alias gr="g rebase"
 alias sq="g rebase -i HEAD~"
 
+alias x="gitx"
+
 # use purer zsh prompt for git status, branch, dir, etc:
 # https://github.com/dfurnes/purer
 PURE_PROMPT_SYMBOL="λ"
