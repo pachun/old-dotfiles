@@ -12,12 +12,8 @@ alias migrate="rails db:migrate db:test:prepare"
 
 alias s="rspec"
 
-branch = _git_branch_name() {
-  git branch 2>/dev/null | awk '/^\*/ { print $2 }'
-}
-alias gp="git push --set-upstream origin ${branch}"
-
 alias g="hub"
+alias gs="g status"
 alias pr="g pull-request"
 alias gco="g checkout"
 alias gb="g branch"

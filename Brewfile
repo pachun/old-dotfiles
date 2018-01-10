@@ -20,6 +20,12 @@ brew 'wget'
 brew 'tmux'
 brew 'heroku'
 
+# acceptance testing react-native apps: https://github.com/wix/detox
+tap 'facebook/fb'
+brew 'fbsimctl', args: ['--HEAD']
+tap 'wix/brew'
+brew 'applesimutils'
+
 # asdf deps: https://github.com/asdf-vm/asdf/blob/master/README.md
 brew 'coreutils'
 brew 'automake'
