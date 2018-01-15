@@ -5,6 +5,7 @@ alias ..="cd .."
 alias c="clear"
 alias e="exit"
 alias t="tmux"
+alias d="detox test"
 
 alias b="bundle"
 alias be="bundle exec"
@@ -18,7 +19,9 @@ alias pr="g pull-request"
 alias gco="g checkout"
 alias gb="g branch"
 alias gr="g rebase"
-alias sq="g rebase -i HEAD~"
+alias gri="g rebase -i"
+alias gl="g log"
+alias gm="g merge"
 
 alias x="gitx"
 

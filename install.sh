@@ -54,6 +54,9 @@ echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/pat
 echo "cloning asdf extendable version manager..."
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
 
+echo "Adding ctrl+p vim fuzzy filename search"
+git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+
 echo "sym linking dotfiles..."
 rcup -x Brewfile -x install.sh -v -d .
 
