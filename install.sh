@@ -43,9 +43,6 @@ echo "using zsh instead of bash..."
 # echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
-# use the purer prompt
-npm install --global purer-prompt
-
 # setup path for postgres.app: https://postgresapp.com/documentation/cli-tools.html
 sudo mkdir -p /etc/paths.d &&
 echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
@@ -59,6 +56,3 @@ git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 
 echo "sym linking dotfiles..."
 rcup -x Brewfile -x install.sh -v -d .
-
-# reload zshrc to load purer
-source ~/.zshrc
