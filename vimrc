@@ -27,7 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'mxw/vim-jsx'
-Plug 'iCyMind/NeoSolarized'
+Plug 'skwp/vim-colors-solarized'
 call plug#end()
 
 " vim-test mappings
@@ -71,8 +71,8 @@ set autoread
 imap jj <Esc>
 
 " personal preferences
-colorscheme NeoSolarized
 set background=dark
+colorscheme solarized
 
 " syntax highlight inline xml inside of .js and .jsx files
 let g:jsx_ext_required = 0
