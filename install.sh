@@ -20,8 +20,8 @@
 
 # use thing strokes for anti-aliased text: always
 # uncheck: "Draw bold text in bold font"
-# set iterm font: 16 pt Fantasque Sans Mono: https://github.com/belluzj/fantasque-sans
-# install gruvbox solarized themes: https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2
+# set iterm font: 16 pt Menlo
+# install solarized iterm themes: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
 # Enable the option under Preferences -> Profiles -> Terminal called:
 #   Save lines to scrollback when an app status bar is present
 
