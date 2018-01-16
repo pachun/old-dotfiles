@@ -1,3 +1,5 @@
+brew 'git', args: ['without-completions']
+
 # thoughtbot package which sym links dotfiles
 tap 'thoughtbot/formulae'
 brew 'rcm'
