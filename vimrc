@@ -1,6 +1,6 @@
 " use true color for gruvbox:
 "   https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
-set termguicolors
+set termguicolors " comment this if you're not useing gruvbox
 
 " Leader
 let mapleader = " "
@@ -15,7 +15,6 @@ endif
 
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -28,6 +27,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'mxw/vim-jsx'
 Plug 'skwp/vim-colors-solarized'
+Plug 'phongvcao/vim-stardict'
+Plug 'junegunn/goyo.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " vim-test mappings
@@ -67,12 +70,20 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Don't ask me if I want to load changed files. The answer is always 'Yes'
 set autoread
 
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_fix_on_save=1
+
 " personal preferences
 imap jj <Esc>
 
 " personal preferences
-set background=dark
-colorscheme solarized
+
+
+syntax enable
+set background=light
+colorscheme gruvbox
 
 " syntax highlight inline xml inside of .js and .jsx files
 let g:jsx_ext_required = 0
@@ -80,3 +91,19 @@ let g:jsx_ext_required = 0
 " enable control + p fuzzy filename searching
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  if !exists(":Ag")
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Ag<SPACE>
+  endif
+endif

@@ -4,3 +4,6 @@
   excludesfile = ~/.gitignore
 [merge]
   ff = only
+[user]
+  name = Nick Pachulski
+  email = nick@pachulski.me

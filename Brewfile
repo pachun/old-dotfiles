@@ -22,6 +22,9 @@ brew 'wget'
 brew 'tmux'
 brew 'heroku'
 
+# for rails/spring binstubs
+brew 'direnv'
+
 # acceptance testing react-native apps: https://github.com/wix/detox
 tap 'facebook/fb'
 brew 'fbsimctl', args: ['--HEAD']

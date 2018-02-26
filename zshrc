@@ -29,6 +29,23 @@ alias gm="g merge"
 
 alias x="gitx"
 
+# direnv for spring in rails apps so i can do `rspec` instead of `bin/rspec`
+export DIRENV_LOG_FORMAT=
+eval "$(direnv hook zsh)"
+
+
+# history
+setopt append_history         # Append, not replace
+setopt inc_append_history     # Immediately append history
+setopt always_to_end          # Always go to end of line on complete
+setopt correct                # Correct typos
+setopt hist_ignore_dups       # Do not show dupes in history
+setopt hist_ignore_space      # Ignore commands starting with space
+setopt prompt_subst           # Necessary for pretty prompts
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.history
+
 # use vi mode instead of emacs on the command line
 bindkey -v
 
@@ -134,3 +151,7 @@ function precmd {
 }
 
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
