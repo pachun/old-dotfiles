@@ -153,5 +153,7 @@ function precmd {
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
 
 export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export PATH=$PATH:~/Library/Android/sdk/tools/bin
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
+export PATH=$PATH:~/Library/Android/sdk/emulator

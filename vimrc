@@ -5,6 +5,8 @@ set termguicolors " comment this if you're not useing gruvbox
 " Leader
 let mapleader = " "
 
+au VimResized * :redraw!
+
 " install vim-plug:
 "   https://github.com/junegunn/vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
