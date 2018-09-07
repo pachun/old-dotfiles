@@ -3,7 +3,7 @@
 set termguicolors " comment this if you're not useing gruvbox
 
 " Leader
-let mapleader = " "
+let mapleader=" "
 
 au VimResized * :redraw!
 
@@ -28,12 +28,45 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
 Plug 'mxw/vim-jsx'
-Plug 'skwp/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'phongvcao/vim-stardict'
 Plug 'junegunn/goyo.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
+Plug 'mhinz/vim-mix-format'
+Plug 'scrooloose/nerdtree'
+Plug 'slim-template/vim-slim'
+Plug 'sbdchd/neoformat'
 call plug#end()
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.js,*.tsx Neoformat
+augroup END
+
+let g:neoformat_enabled_javascript = ['prettier', 'eslint_d']
+
+" autocmd BufWritePre *.tsx Neoformat
+
+" Prettier settings
+" let g:prettier#config#print_width = 80
+" let g:prettier#config#tab_width = 2
+" let g:prettier#config#use_tabs = 'false'
+" let g:prettier#config#single_quote = 'false'
+" let g:prettier#config#bracket_spacing = 'true'
+" let g:prettier#config#jsx_bracket_same_line = 'false'
+" let g:prettier#config#arrow_parens = 'avoid'
+" let g:prettier#config#trailing_comma = 'all'
+" let g:prettier#config#parser = 'typescript'
+" let g:prettier#config#semi = 'false'
+
+" Split to current file
+nnoremap <leader>eh :Vexplore<cr>
+nnoremap <leader>ej :Hexplore<cr>
+nnoremap <leader>ek :Hexplore!<cr>
+nnoremap <leader>el :Vexplore!<cr>
 
 " vim-test mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
@@ -66,6 +99,10 @@ set shiftwidth=2
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set expandtab
 
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -82,10 +119,9 @@ imap jj <Esc>
 
 " personal preferences
 
-
 syntax enable
-set background=light
-colorscheme gruvbox
+set background=dark
+colorscheme solarized8
 
 " syntax highlight inline xml inside of .js and .jsx files
 let g:jsx_ext_required = 0
@@ -109,3 +145,26 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
+
+" format elixir files on save
+let g:mix_format_on_save = 1
+
+" Settings for Ale
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_column_always = 1
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+
+augroup AleGroup
+    autocmd!
+    autocmd User ALELint call TouchOpenFile()
+augroup END
+
+func! TouchOpenFile()
+    let g:ale_enabled = 0
+    sleep 500m
+    let g:ale_enabled = 1
+endfunc

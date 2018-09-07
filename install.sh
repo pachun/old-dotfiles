@@ -25,6 +25,13 @@
 # Enable the option under Preferences -> Profiles -> Terminal called:
 #   Save lines to scrollback when an app status bar is present
 
+# chrome: enable tabbing to select first google result and j/k/l to move (up/down from)/click the selected link
+# https://superuser.com/questions/1234766/how-to-use-keyboard-to-navigate-google-search-results-now-that-instant-search-i
+
+# chrome: enable smooth vim key scrolling in the browser
+# set holding control to speed up the scroll (24px) so that caps lock (mapped to control) works with this
+# https://chrome.google.com/webstore/detail/smooth-key-scroll/gphmhpfbknciemgfnfhjapilmcaecljh/related?hl=en
+
 # install homebrew:
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 

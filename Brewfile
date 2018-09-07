@@ -41,3 +41,6 @@ brew 'readline'
 brew 'libxslt'
 brew 'libtool'
 brew 'unixodbc'
+
+# capybara webkit for acceptance specs
+brew 'qt@5.5'
