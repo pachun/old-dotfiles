@@ -1,3 +1,5 @@
+alias ssh="TERM=xterm-256color ssh"
+
 # use neovim
 export VISUAL=nvim
 export EDITOR=$VISUAL
@@ -15,7 +17,7 @@ alias b="bundle"
 alias be="bundle exec"
 alias migrate="rails db:migrate db:test:prepare"
 
-alias s="rspec"
+alias s="bundle exec bin/rspec"
 
 alias g="hub"
 alias gs="g status"
@@ -28,6 +30,11 @@ alias gl="g log"
 alias gm="g merge"
 
 alias x="gitx"
+alias gaph="git log --graph --all -30"
+
+alias wip="git add .; git commit -am 'wip'"
+alias testcoverage="DISABLE_SPRING=true COVERAGE=true bundle exec rspec"
+alias kill3000="kill -9 $(lsof -ti tcp:3000)"
 
 # direnv for spring in rails apps so i can do `rspec` instead of `bin/rspec`
 export DIRENV_LOG_FORMAT=

@@ -15,6 +15,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" let g:solarized_use16 = 1
+
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
@@ -39,11 +41,12 @@ Plug 'mhinz/vim-mix-format'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'sbdchd/neoformat'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre *.js,*.tsx Neoformat
+  autocmd BufWritePre *.js,*.tsx,*.ts Neoformat
 augroup END
 
 let g:neoformat_enabled_javascript = ['prettier', 'eslint_d']
