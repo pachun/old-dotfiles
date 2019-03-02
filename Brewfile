@@ -20,16 +20,8 @@ brew 'yarn'
 brew 'the_silver_searcher'
 brew 'wget'
 brew 'tmux'
+tap 'heroku/brew'
 brew 'heroku'
-
-# for rails/spring binstubs
-brew 'direnv'
-
-# acceptance testing react-native apps: https://github.com/wix/detox
-tap 'facebook/fb'
-brew 'fbsimctl', args: ['--HEAD']
-tap 'wix/brew'
-brew 'applesimutils'
 
 # asdf deps: https://github.com/asdf-vm/asdf/blob/master/README.md
 brew 'coreutils'
@@ -41,6 +33,3 @@ brew 'readline'
 brew 'libxslt'
 brew 'libtool'
 brew 'unixodbc'
-
-# capybara webkit for acceptance specs
-brew 'qt@5.5'

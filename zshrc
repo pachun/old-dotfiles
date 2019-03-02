@@ -36,11 +36,6 @@ alias wip="git add .; git commit -am 'wip'"
 alias testcoverage="DISABLE_SPRING=true COVERAGE=true bundle exec rspec"
 alias kill3000="kill -9 $(lsof -ti tcp:3000)"
 
-# direnv for spring in rails apps so i can do `rspec` instead of `bin/rspec`
-export DIRENV_LOG_FORMAT=
-eval "$(direnv hook zsh)"
-
-
 # history
 setopt append_history         # Append, not replace
 setopt inc_append_history     # Immediately append history

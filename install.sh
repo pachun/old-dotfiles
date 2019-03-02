@@ -47,7 +47,7 @@ brew bundle
 echo "using zsh instead of bash..."
 
 # make homebrew installed zsh the primary zsh version
-# echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
 # setup path for postgres.app: https://postgresapp.com/documentation/cli-tools.html
