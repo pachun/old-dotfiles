@@ -54,10 +54,6 @@ chsh -s /usr/local/bin/zsh
 sudo mkdir -p /etc/paths.d &&
 echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
 
-# use asdf version manager
-echo "cloning asdf extendable version manager..."
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.3
-
 echo "Adding ctrl+p vim fuzzy filename search"
 git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 

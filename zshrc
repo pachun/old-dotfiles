@@ -54,11 +54,6 @@ bindkey -v
 # remap escape to jj
 bindkey -M viins 'jj' vi-cmd-mode
 
-# asdf configuration: https://github.com/asdf-vm/asdf/blob/master/README.md
-autoload -Uz compinit && compinit
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
 # Josh's zsh prompt config:
 #
 # makes color constants available
