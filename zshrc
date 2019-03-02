@@ -149,5 +149,8 @@ function precmd {
 
 PROMPT='$(_working_directory)$(_separate $(_colored_git_branch)) $(_display_current_vim_mode) '
 
+# needs homebrew installed asdf
+source /usr/local/opt/asdf/asdf.sh
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

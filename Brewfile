@@ -13,12 +13,11 @@ brew 'neovim'
 # create pull requests on github from the command line
 brew 'hub'
 
-# i need these
-brew 'yarn'
-
 # i like these
-brew 'the_silver_searcher'
+brew 'yarn'
+brew 'the_silver_searcher' # ag
 brew 'wget'
 brew 'tmux'
+brew 'asdf'
 tap 'heroku/brew'
 brew 'heroku'
