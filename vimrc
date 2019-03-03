@@ -1,6 +1,4 @@
-" use true color for gruvbox:
-"   https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
-set termguicolors " comment this if you're not useing gruvbox
+set termguicolors
 
 " Leader
 let mapleader=" "
@@ -19,6 +17,7 @@ endif
 
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -40,18 +39,8 @@ Plug 'dracula/vim'
 Plug 'mhinz/vim-mix-format'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
-Plug 'sbdchd/neoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre *.js,*.tsx,*.ts Neoformat
-augroup END
-
-let g:neoformat_enabled_javascript = ['prettier', 'eslint_d']
-
-" autocmd BufWritePre *.tsx Neoformat
 
 " Prettier settings
 " let g:prettier#config#print_width = 80
@@ -112,11 +101,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Don't ask me if I want to load changed files. The answer is always 'Yes'
 set autoread
 
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\}
-let g:ale_fix_on_save=1
-
 " personal preferences
 imap jj <Esc>
 
@@ -149,25 +133,5 @@ if executable('ag')
   endif
 endif
 
-" format elixir files on save
-let g:mix_format_on_save = 1
-
-" Settings for Ale
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_column_always = 1
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
-
-augroup AleGroup
-    autocmd!
-    autocmd User ALELint call TouchOpenFile()
-augroup END
-
-func! TouchOpenFile()
-    let g:ale_enabled = 0
-    sleep 500m
-    let g:ale_enabled = 1
-endfunc
+" setup Coc
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
