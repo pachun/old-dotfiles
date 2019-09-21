@@ -17,7 +17,8 @@ endif
 
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -28,7 +29,6 @@ Plug 'jgdavey/tslime.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'isRuslan/vim-es6'
-Plug 'mxw/vim-jsx'
 Plug 'lifepillar/vim-solarized8'
 Plug 'phongvcao/vim-stardict'
 Plug 'junegunn/goyo.vim'
@@ -41,6 +41,15 @@ Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
+
+let g:ale_fixers = {
+\ 'javascript': ['prettier', 'eslint'],
+\ 'typescript': ['prettier', 'eslint'],
+\ 'html': ['prettier', 'eslint'],
+\}
+
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 " Prettier settings
 " let g:prettier#config#print_width = 80
@@ -92,7 +101,7 @@ set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set expandtab
 
 " Make it obvious where 80 characters is
-set textwidth=80
+" set textwidth=80
 set colorcolumn=+1
 
 " Display extra whitespace
@@ -132,6 +141,3 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
-
-" setup Coc
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

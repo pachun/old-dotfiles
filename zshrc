@@ -1,5 +1,8 @@
 alias ssh="TERM=xterm-256color ssh"
 
+source "/usr/local/share/zsh/site-functions/git-completion.bash"
+autoload -U compinit && compinit
+
 # use neovim
 export VISUAL=nvim
 export EDITOR=$VISUAL
@@ -35,6 +38,7 @@ alias gaph="git log --graph --all -30"
 alias wip="git add .; git commit -am 'wip'"
 alias testcoverage="DISABLE_SPRING=true COVERAGE=true bundle exec rspec"
 alias kill3000="kill -9 $(lsof -ti tcp:3000)"
+alias timber="heroku addons:open timber-logging"
 
 # history
 setopt append_history         # Append, not replace
