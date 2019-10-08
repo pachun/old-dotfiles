@@ -17,7 +17,6 @@ endif
 
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
@@ -40,28 +39,21 @@ Plug 'mhinz/vim-mix-format'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
-let g:ale_fixers = {
-\ 'javascript': ['prettier', 'eslint'],
-\ 'typescript': ['prettier', 'eslint'],
-\ 'html': ['prettier', 'eslint'],
-\}
-
-let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 1
-
-" Prettier settings
-" let g:prettier#config#print_width = 80
-" let g:prettier#config#tab_width = 2
-" let g:prettier#config#use_tabs = 'false'
-" let g:prettier#config#single_quote = 'false'
-" let g:prettier#config#bracket_spacing = 'true'
-" let g:prettier#config#jsx_bracket_same_line = 'false'
-" let g:prettier#config#arrow_parens = 'avoid'
-" let g:prettier#config#trailing_comma = 'all'
-" let g:prettier#config#parser = 'typescript'
-" let g:prettier#config#semi = 'false'
+let g:prettier#config#print_width = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#parser = 'typescript'
+let g:prettier#config#semi = 'false'
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Split to current file
 nnoremap <leader>eh :Vexplore<cr>
