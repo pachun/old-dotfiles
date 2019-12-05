@@ -38,7 +38,10 @@ alias gaph="git log --graph --all -30"
 alias wip="git add .; git commit -am 'wip'"
 alias testcoverage="DISABLE_SPRING=true COVERAGE=true bundle exec rspec"
 alias kill3000="kill -9 $(lsof -ti tcp:3000)"
-alias timber="heroku addons:open timber-logging"
+
+alias fuck='sudo $(history -p \!\!)'
+
+alias rmlocal="git branch | grep -v \"master\" | xargs git branch -D"
 
 # history
 setopt append_history         # Append, not replace

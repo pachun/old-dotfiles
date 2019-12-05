@@ -17,6 +17,7 @@ endif
 
 " install vim-plug things
 call plug#begin('~/.vim/plugged')
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'w0rp/ale'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-scripts/tComment'
@@ -40,7 +41,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'elmcast/elm-vim'
 call plug#end()
+
+let g:ale_linters = {
+\   'ruby': ['brakeman', 'rails_best_practices', 'reek', 'ruby', 'solargraph', 'standardrb'],
+\}
+
+let g:mkdp_auto_start = 1
 
 let g:prettier#config#print_width = 80
 let g:prettier#config#tab_width = 2
