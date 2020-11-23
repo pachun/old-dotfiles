@@ -1,9 +1,51 @@
-[format]
-  pretty = format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+  ui = auto
+[alias]
+  dd = diff-excluding-generated
+  aa = add --all
+  ap = add --patch
+  branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  ci = commit -v
+  co = checkout
+  cb = checkout-branch
+  pf = push --force-with-lease
+  st = status
+  cpr = close-pull-request
+  last = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
+  fixup = commit --fixup
+  squash = commit --squash
+  conflicts = "!vim $(git diff --name-only --diff-filter=U)"
+  show-commit = show -s --format=%B
+  find = log --pretty=\"format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset\" --grep
 [core]
   excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = diff-so-fancy | less -R --tabs=1,5
 [merge]
   ff = only
+[commit]
+  template = ~/.gitmessage
+[fetch]
+  prune = true
+[format]
+  pretty = format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset
+[diff]
+  compactionHeuristic = true
+[rebase]
+  autosquash = true
 [user]
-  name = Nick Pachulski
-  email = nick@pachulski.me
+	name = Nick Pachulski
+	email = nick@pachulski.me
+[github]
+  user = jsteiner
+[url "git@github.com:jsteiner/"]
+  # moi, with write access
+  insteadOf = js:
+[include]
+  path = ~/.gitconfig.local
+[branch]
+  sort = -committerdate
